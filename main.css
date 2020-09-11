@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+    font-weight: 16px;
+    
+  }
+  html body {
+      height: 100vh;
+  }
+  button {
+    cursor: pointer;
+  }
+   
+  button,input {
+    border: none;
+    background: none;
+    outline: none;
+    color: black;
+  }
+  ul {
+    list-style: none;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    font-family: "Libre Baskerville ", serif;
+    padding: 50px;
+    background-image: linear-gradient(to bottom right, #2980b9, #6dd5fa,#ffffff);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;  
+  }
+ 
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  h1 {
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 3rem;
+    letter-spacing: 0.02em;
+    padding: 0 0 10px 0;
+    color: aliceblue
+  }
+  .heading form {
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .heading form label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1rem;
+    height: 40px;
+    padding:10px 5px;
+    border: none;
+    border-radius: 15px 0 15px 0;
+    outline: none;
+    border-left: 3px solid #DF8E00;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .heading form input {
+    font-size: 1.3rem;
+    padding-left: 10px;
+  }
+  
+  
+   button {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    padding: 10px 15px;
+    margin-left: 15px;
+    border-radius: 5px;
+    background: #DF8E00;
+    
+  }
+  button:hover {
+      background-color: #fff;
+  }
+  footer {
+      position: fixed;
+      right: 20px;
+      bottom: 0;
+      text-align: center;
+  }
+  .reports-section {
+    top: 30px;
+    width: 300px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 10px;
+    border-radius: 20px;
+    background: #fff;
+    
+  }
+  
+  .reports-section::after {
+    content: '';
+    width: 90%;
+    height: 50px;
+    position: absolute;
+    bottom: -12px;
+    left: 5%;
+    z-index: -1;
+    opacity: 0.3;
+    border-radius: 20px;
+    background: rgb(33, 110, 98);
+  }
+  .city {
+    padding: 20px;
+    font-size: 2rem;
+  }
+  .date {
+    padding: 5px;
+    font-size: 1.1rem;
+  }
+  .temp {
+    padding: 10px;
+    font-size: 2rem;
+    font-weight: bolder;
+  }
+  .weather {
+    padding: 5px;
+    font-size: 1.1rem;
+    text-transform: uppercase ;
+  }
+  .average {
+    padding: 5px;
+    font-size: 1.1rem;
+  }
+  .icons {
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+  }
+  @media screen and (max-width: 500px) {
+    .reports-section {
+      top: 10px;
+      height: 350px;
+      padding: 15px 10px;
+      
+    }
+    body{
+      padding :20px;
+    } 
+  
+  h1 {
+    font-size: 2rem;
+  }
+  .heading form {
+    display: flex;
+    flex-direction: column;
+  }
+  .heading form label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    padding:5px;
+    border-right: 3px solid #DF8E00;
+  }
+  
+  .heading form input {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+  }
+  button {
+    margin-top: 10px;
+  }
+  .icons {
+    margin-top: 5px;
+    width: 80px;
+    height: 80px;
+  }
+ footer {
+   position: relative ;
+    margin-top:30px;
+    right: 20px;
+  }
+  }
