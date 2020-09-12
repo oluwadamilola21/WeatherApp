@@ -147,7 +147,7 @@
     width: 100px;
     height: 100px;
   }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 550px) {
     .reports-section {
       top: 10px;
       height: 350px;

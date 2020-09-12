@@ -7,18 +7,13 @@ const input = document.querySelector(".values input");
 submit.addEventListener("submit", e => {
     e.preventDefault();
     let myValues = input.value;
-    //console.log(myValues);
 
     fetch(`${api.url}weather?q=${myValues}&units=metric&appid=${api.key}`)
     .then(response => {
-        // console.log(res)
-        // console.log(data)y
         return response.json()
     })
     .then(data=>
         {
-    //function showResults(weather) {
-    //console.log(weather)
         const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${data.weather[0].icon}.svg`;
 
         let city = document.querySelector(".city");
@@ -35,6 +30,7 @@ submit.addEventListener("submit", e => {
         let icons = document.querySelector(".icons");
         let image = document.createElement("img");
         image.src = icon;
+        image.alt = ""
         icons.appendChild(image);
         icons.replaceChild(image, icons.children[0]);
 
@@ -52,9 +48,57 @@ submit.addEventListener("submit", e => {
             let year = d.getFullYear();
             return `${day} , ${month}  ${date} ${year}`;
         }
+        
+        sendToLocalStorage()
+        
     })
-    // localStorage.setItem("storeData", "Oluwadamilola");
-    // const myData = localStorage.getItem("storeData")
-    // console.log(myData)
     
+    function sendToLocalStorage() {
+        let setCity = document.querySelector(".city").innerText;
+        localStorage.setItem("is-city", setCity);
+
+        let  setDate = document.querySelector(".date").innerText;
+        localStorage.setItem("is-Date", setDate)
+
+        let setTemp = document.querySelector(".temp").innerHTML;
+        localStorage.setItem("is-temp", setTemp);
+
+       
+        let setIcons = document.querySelector("img").src;
+        localStorage.setItem("is-icon", setIcons);
+
+        let setDes = document.querySelector(".weather").innerText;
+        localStorage.setItem("is-description", setDes);
+
+        let setAverageTemp = document.querySelector(".average").innerText;
+        localStorage.setItem("is-average", setAverageTemp);
+    }
+
+submit.reset();
+input.focus();
 })
+function getFromLocalStorage(){
+    let getCity = localStorage.getItem("is-city");
+    document.querySelector(".city").innerText = getCity;
+
+
+    let  getDate = localStorage.getItem("is-Date",);
+    document.querySelector(".date").innerText = getDate;
+    
+
+    let getTemp =  localStorage.getItem("is-temp")
+    document.querySelector(".temp").innerHTML = getTemp;
+    
+
+    let getDes = localStorage.getItem("is-description");
+    document.querySelector(".weather").innerText = getDes
+    
+
+     let getAverageTemp = localStorage.getItem("is-average");
+    document.querySelector(".average").innerText = getAverageTemp
+    
+}
+window.onload = function(){
+    getFromLocalStorage();
+}
+
