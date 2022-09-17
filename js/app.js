@@ -1,5 +1,5 @@
 const api = {
-    key: "cfc1f539448ef0f9967ae49557fcf744",
+    key: "c67f72a488c3c396d7bc4067b207bd1d",
     url: "https://api.openweathermap.org/data/2.5/"
 }
 const  submit = document.querySelector(".values");
